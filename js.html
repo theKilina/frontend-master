@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Master | Изучение JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="headr">
+            <div class="logo">
+                <p class="logo2">FRONT_END</p>
+            </div>
+            <nav class="head">
+                <ul class="navig">
+                    <li><a href="index.html" class="link">главная</a></li>
+                    <li><a href="html.html" class="link">html</a></li>
+                    <li><a href="css.html" class="link">css</a></li>
+                    <li><a href="js.html" class="link_active">javascript</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header-js">
+                <h1 class="js-web">JavaScript — интерактивность веб-страниц</h1>
+                <p>JavaScript — это язык программирования, который оживляет сайты. С его помощью можно создавать анимации, обрабатывать клики, работать с данными и многое другое.</p>
+            </div>
+
+            <div class="js-demo-box" style="margin: 10px 180px; text-align: center;">
+                <h3 style="color: #553D67; margin-bottom: 25px; font-size: 23px; font-weight: 400;">
+                JavaScript в действии
+                </h3>
+    
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <button onclick="demoClick()" style="
+                        background: #553D67;
+                        border: 2px solid #553D67;
+                        color: white;
+                        padding: 12px 20px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        font-weight: 700;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 2px 15px #553D67;
+                        box-sizing: border-box;
+                    ">Нажми меня!</button>
+        
+                    <button onclick="demoReset()" style="
+                        background: white;
+                        border: 2px solid #553D67;
+                        color: #553D67;
+                        padding: 12px 20px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        font-weight: 400;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-sizing: border-box;
+                    ">Сбросить</button>
+                </div>
+    
+                <div id="demo-output" style="
+                    margin: 20px auto 0 auto;
+                    max-width: 300px;
+                    background: #553D67;
+                    color: white;
+                    padding: 20px 30px;
+                    border-radius: 10px;
+                    min-height: 50px;
+                    font-size: 17px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                ">
+                    Нажми на кнопку!
+                </div>
+            </div>
+
+            <div class="table-of-contents">
+                <h3 style="color: #553D67; font-size: 17px;">Содержание</h3>
+                <ul>
+                    <li><a href="#intro">Введение</a></li>
+                    <li><a href="#variables">Переменные</a></li>
+                    <li><a href="#types">Типы данных</a></li>
+                    <li><a href="#conditions">Условия</a></li>
+                    <li><a href="#loops">Циклы</a></li>
+                    <li><a href="#arrays">Массивы</a></li>
+                    <li><a href="#objects">Объекты</a></li>
+                    <li><a href="#functions">Функции</a></li>
+                    <li><a href="#dates">Даты</a></li>
+                    <li><a href="#practice">Практика</a></li>
+                </ul>
+            </div>
+
+            <section id="intro" class="js-section">
+                <h2 class="section-title-page js-color">Что такое JavaScript?</h2>
+                <div class="theory-block-js" style="margin: 0;">
+                    <p style="color: #553D67; line-height: 25px; font-size: 17px;">JavaScript (JS) — это язык программирования, который работает в браузере. Он позволяет:</p>
+                    <ul style="color: #553d67b7; line-height: 25px; margin-left: 20px; margin-top: 10px;">
+                        <li>Изменять содержимое страницы</li>
+                        <li>Менять стили элементов</li>
+                        <li>Обрабатывать действия пользователя (клики, ввод)</li>
+                        <li>Отправлять запросы на сервер</li>
+                        <li>Работать с данными</li>
+                    </ul>
+                    
+                    <div class="note" style="margin-top: 15px;">
+                        <strong style="color: #2F2FA2;">Важно:</strong> JavaScript — это язык программирования. В отличие от HTML и CSS, в нём есть логика, условия, циклы и функции.
+                    </div>
+                </div>
+            </section>
+
+            <section id="variables" class="js-section">
+                <h2 class="section-title-page js-color">Переменные</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">let</div>
+                        <p class="topic-desc">Переменная, которую можно изменять</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let name = 'Анна';<br>
+                            name = 'Мария';<br>
+                            console.log(name);
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">const</div>
+                        <p class="topic-desc">Константа — значение нельзя изменить</p>
+                        <div class="code-block" style="padding: 15px;">
+                            const PI = 3.14;<br>
+                            // PI = 3.15 — ошибка!
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">var</div>
+                        <p class="topic-desc">Устаревший способ (не использовать)</p>
+                        <div class="code-block" style="padding: 15px;">
+                            // Устарело!<br>
+                            // Используй let или const
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <p><strong style="color: #2F2FA2;">Правило:</strong> Используй <code>const</code> по умолчанию, <code>let</code> только если значение будет меняться. <code>var</code> не используй!</p>
+                </div>
+            </section>
+
+            <section id="types" class="js-section">
+                <h2 class="section-title-page js-color">Типы данных</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">Строки (string)</div>
+                        <p class="topic-desc">Текст в кавычках</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let text = 'Привет!';<br>
+                            let name = "Анна";
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Числа (number)</div>
+                        <p class="topic-desc">Целые и дробные числа</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let age = 25;<br>
+                            let price = 99.99;
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Булевы (boolean)</div>
+                        <p class="topic-desc">true или false</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let isReady = true;<br>
+                            let isLogged = false;
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">null и undefined</div>
+                        <p class="topic-desc">Пустое значение или не определено</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let user = null;<br>
+                            let something; // undefined
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-block-js" style="margin: 20px 0;">
+                    <h3 style="color: #553D67; margin-bottom: 10px;">Определение типа:</h3>
+                    <div class="code-block">
+                        typeof 'Привет'; // 'string'<br>
+                        typeof 42;        // 'number'<br>
+                        typeof true;      // 'boolean'<br>
+                        typeof null;      // 'object' (ошибка JS)
+                    </div>
+                </div>
+            </section>
+
+            <section id="conditions" class="js-section">
+                <h2 class="section-title-page js-color">Условные операторы (if / else)</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">if</div>
+                        <p class="topic-desc">Выполняется, если условие true</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let age = 18;<br>
+                            if (age >= 18) {<br>
+                            &nbsp;&nbsp;console.log('Доступ разрешён');<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">if / else</div>
+                        <p class="topic-desc">Одно из двух</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let age = 16;<br>
+                            if (age >= 18) {<br>
+                            &nbsp;&nbsp;console.log('Доступ разрешён');<br>
+                            } else {<br>
+                            &nbsp;&nbsp;console.log('Доступ запрещён');<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">if / else if / else</div>
+                        <p class="topic-desc">Несколько условий</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let num = 0;<br>
+                            if (num > 0) {<br>
+                            &nbsp;&nbsp;console.log('Положительное');<br>
+                            } else if (num &lt; 0) {<br>
+                            &nbsp;&nbsp;console.log('Отрицательное');<br>
+                            } else {<br>
+                            &nbsp;&nbsp;console.log('Ноль');<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Логические операторы</div>
+                        <p class="topic-desc">&& (и), || (или), ! (не)</p>
+                        <div class="code-block" style="padding: 15px;">
+                            if (age >= 18 && hasPass) {<br>
+                            &nbsp;&nbsp;console.log('Пропуск');<br>
+                            }<br><br>
+                            
+                            if (isAdmin || isOwner) {<br>
+                            &nbsp;&nbsp;console.log('Доступ');<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="loops" class="js-section">
+                <h2 class="section-title-page js-color">Циклы</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">for</div>
+                        <p class="topic-desc">Цикл с известным количеством повторений</p>
+                        <div class="code-block" style="padding: 15px;">
+                            for (let i = 1; i &lt;= 5; i++) {<br>
+                            &nbsp;&nbsp;console.log(i); // 1, 2, 3, 4, 5<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">while</div>
+                        <p class="topic-desc">Цикл с условием</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let i = 1;<br>
+                            while (i &lt;= 5) {<br>
+                            &nbsp;&nbsp;console.log(i);<br>
+                            &nbsp;&nbsp;i++;<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">for / of (для массивов)</div>
+                        <p class="topic-desc">Перебор элементов массива</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let arr = [1, 2, 3];<br>
+                            for (let item of arr) {<br>
+                            &nbsp;&nbsp;console.log(item);<br>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">for / in (для объектов)</div>
+                        <p class="topic-desc">Перебор ключей объекта</p>
+                        <div class="code-block" style="padding: 15px;">
+                            let obj = {a: 1, b: 2};<br>
+                            for (let key in obj) {<br>
+                            &nbsp;&nbsp;console.log(key, obj[key]);<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="arrays" class="js-section">
+                <h2 class="section-title-page js-color">Массивы</h2>
+                
+                <div class="topic-card">
+                    <p style="color: #553D67; margin-bottom: 15px;">Массив — это упорядоченный набор данных. Индексация начинается с 0.</p>
+                    
+                    <div class="code-block">
+                        let arr = [1, 2, 3, 4, 5];<br>
+                        console.log(arr[0]); // 1<br>
+                        console.log(arr[2]); // 3<br>
+                        console.log(arr.length); // 5
+                    </div>
+                </div>
+                
+                <div class="topic-grid" style="margin-top: 20px;">
+                    <div class="topic-card">
+                        <div class="topic-name">Методы массивов</div>
+                        <div class="code-block" style="padding: 15px;">
+                            arr.push(6); // добавить в конец<br>
+                            arr.pop(); // удалить последний<br>
+                            arr.unshift(0); // добавить в начало<br>
+                            arr.shift(); // удалить первый
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Методы преобразования</div>
+                        <div class="code-block" style="padding: 15px;">
+                            arr.map(x => x * 2); // умножить каждый<br>
+                            arr.filter(x => x > 2); // оставить > 2<br>
+                            arr.reduce((sum, x) => sum + x); // сумма<br>
+                            arr.sort((a, b) => a - b); // сортировка
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objects" class="js-section">
+                <h2 class="section-title-page js-color">Объекты</h2>
+                
+                <div class="topic-card">
+                    <p style="color: #553D67; margin-bottom: 15px;">Объект — это набор пар «ключ: значение».</p>
+                    
+                    <div class="code-block">
+                        let user = {<br>
+                        &nbsp;&nbsp;name: 'Анна',<br>
+                        &nbsp;&nbsp;age: 25,<br>
+                        &nbsp;&nbsp;city: 'Москва'<br>
+                        };<br><br>
+                        
+                        console.log(user.name); // 'Анна'<br>
+                        console.log(user['age']); // 25
+                    </div>
+                </div>
+                
+                <div class="topic-grid" style="margin-top: 20px;">
+                    <div class="topic-card">
+                        <div class="topic-name">Работа с объектами</div>
+                        <div class="code-block" style="padding: 15px;">
+                            // Добавление свойства<br>
+                            user.email = 'anna@mail.ru';<br><br>
+                            
+                            // Удаление свойства<br>
+                            delete user.city;<br><br>
+                            
+                            // Получение ключей<br>
+                            Object.keys(user); // ['name', 'age']<br><br>
+                            
+                            // Получение значений<br>
+                            Object.values(user); // ['Анна', 25]
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Объекты с вложенностью</div>
+                        <div class="code-block" style="padding: 15px;">
+                            let user = {<br>
+                            &nbsp;&nbsp;name: 'Анна',<br>
+                            &nbsp;&nbsp;address: {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;city: 'Москва',<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;street: 'Тверская'<br>
+                            &nbsp;&nbsp;}<br>
+                            };<br><br>
+                            
+                            console.log(user.address.city);
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="functions" class="js-section">
+                <h2 class="section-title-page js-color">Функции</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">Объявление функции</div>
+                        <div class="code-block" style="padding: 15px;">
+                            function greet(name) {<br>
+                            &nbsp;&nbsp;return 'Привет, ' + name;<br>
+                            }<br><br>
+                            
+                            greet('Анна'); // 'Привет, Анна'
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Стрелочные функции</div>
+                        <div class="code-block" style="padding: 15px;">
+                            const greet = (name) => {<br>
+                            &nbsp;&nbsp;return 'Привет, ' + name;<br>
+                            };<br><br>
+                            
+                            // Короткая запись<br>
+                            const double = x => x * 2;
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Функции с параметрами</div>
+                        <div class="code-block" style="padding: 15px;">
+                            function sum(a, b) {<br>
+                            &nbsp;&nbsp;return a + b;<br>
+                            }<br><br>
+                            
+                            // Параметры по умолчанию<br>
+                            function greet(name = 'Гость') {<br>
+                            &nbsp;&nbsp;return 'Привет, ' + name;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dates" class="js-section">
+                <h2 class="section-title-page js-color">Работа с датами</h2>
+                
+                <div class="topic-card">
+                    <div class="code-block">
+                        // Текущая дата и время<br>
+                        let now = new Date();<br><br>
+                        
+                        // Создание даты<br>
+                        let date = new Date(2026, 0, 30); // 30 января 2026<br><br>
+                        
+                        // Методы даты<br>
+                        date.getFullYear(); // 2026<br>
+                        date.getMonth(); // 0 (январь)<br>
+                        date.getDate(); // 30<br>
+                        date.getDay(); // день недели (0 - воскресенье)<br><br>
+                        
+                        // Форматирование<br>
+                        now.toLocaleDateString('ru-RU');<br>
+                        now.toLocaleTimeString('ru-RU');
+                    </div>
+                </div>
+            </section>
+
+            <section class="js-section">
+                <h2 class="section-title-page js-color">📝 Примеры из моей практики</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <div class="topic-name">Сумма цифр числа</div>
+                        <div class="code-block" style="padding: 15px; font-size: 13px;">
+                            function sumDigits(num) {<br>
+                            &nbsp;&nbsp;let str = String(num);<br>
+                            &nbsp;&nbsp;let sum = 0;<br>
+                            &nbsp;&nbsp;for (let i = 0; i &lt; str.length; i++) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;sum += Number(str[i]);<br>
+                            &nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;return sum;<br>
+                            }<br><br>
+                            
+                            sumDigits(12345); // 15
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Проверка на палиндром</div>
+                        <div class="code-block" style="padding: 15px; font-size: 13px;">
+                            function isPalindrome(str) {<br>
+                            &nbsp;&nbsp;let reversed = str.split('').reverse().join('');<br>
+                            &nbsp;&nbsp;return str === reversed;<br>
+                            }<br><br>
+                            
+                            isPalindrome('abcba'); // true<br>
+                            isPalindrome('hello'); // false
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-name">Удаление дублей из массива</div>
+                        <div class="code-block" style="padding: 15px; font-size: 13px;">
+                            function removeDuplicates(arr) {<br>
+                            &nbsp;&nbsp;return arr.filter((item, index) => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return arr.indexOf(item) === index;<br>
+                            &nbsp;&nbsp;});<br>
+                            }<br><br>
+                            
+                            removeDuplicates([1,2,2,3,3,4]);<br>
+                            // [1, 2, 3, 4]
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="theory-block-js" style="margin: 50px 180px;">
+                <h3 style="color: #553D67; margin-bottom: 15px;">🔗 Полезные ресурсы по JavaScript</h3>
+                <ul style="color: #553D67; line-height: 2;">
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" style="color: #2F2FA2;">MDN Web Docs — JavaScript</a></li>
+                    <li><a href="https://learn.javascript.ru/" style="color: #2F2FA2;">learn.javascript.ru — учебник</a></li>
+                    <li><a href="https://www.codewars.com/" style="color: #2F2FA2;">CodeWars — задачи для практики</a></li>
+                    <li><a href="https://jsfiddle.net/" style="color: #2F2FA2;">JSFiddle — онлайн редактор</a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="fe">FRONT_END</h4>
+                    <p class="opicanie">Обучение современной фронтенд разработке с нуля</p>
+                    <p class="opicanie2">до профессионального уровня.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://vk.com/anykkln" target="_blank">Вконтакте</a></li>
+                        <li><a href="https://t.me/anykkln" target="_blank">Телеграм</a></li>
+                        <li><a href="mailto:the.kilina@yandex.ru">Написать мне: the.kilina@yandex.ru</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Курсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="html.html">HTML для начинающих</a></li>
+                        <li><a href="css.html">CSS и стилизация</a></li>
+                        <li><a href="js.html">JavaScript основы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.mozilla.org/ru/" target="_blank">Документация</a></li>
+                        <li><a href="https://htmlacademy.ru/blog" target="_blank">Шпаргалки</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">Инструменты</a></li>
+                        <li><a href="https://github.com/theKilina" target="_blank">Гитхаб</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FRONT_END</p>
+                <p>Сайт создан для обучения веб-разработке.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        let demoCounter = 0;
+        
+        function demoClick() {
+            demoCounter++;
+            document.getElementById('demo-output').innerHTML = 'Кликов: ' + demoCounter + ' 🎉';
+        }
+        
+        function demoReset() {
+            demoCounter = 0;
+            document.getElementById('demo-output').innerHTML = 'Сброшено! Нажми на кнопку.';
+        }
+    </script>
+</body>
+</html>

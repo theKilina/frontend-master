@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Master | Изучение HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="headr">
+            <div class="logo">
+                <p class="logo2">FRONT_END</p>
+            </div>
+            <nav class="head">
+                <ul class="navig">
+                    <li><a href="index.html" class="link">главная</a></li>
+                    <li><a href="html.html" class="link_active">html</a></li>
+                    <li><a href="css.html" class="link">css</a></li>
+                    <li><a href="js.html" class="link">javascript</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header-html">
+                <h1>HTML — структура веб-страниц</h1>
+                <p>Hyper Text Markup Language — это язык разметки, который создаёт основу любого сайта. Всё, что ты видишь на странице, начинается с HTML-тегов.</p>
+            </div>
+
+            <div class="table-of-contents">
+                <h3 style="color: #553D67; font-size: 18px;">Содержание</h3>
+                <ul>
+                    <li><a href="#intro">Введение</a></li>
+                    <li><a href="#structure">Структура документа</a></li>
+                    <li><a href="#basic-tags">Основные теги</a></li>
+                    <li><a href="#semantic">Семантические теги</a></li>
+                    <li><a href="#attributes">Атрибуты</a></li>
+                    <li><a href="#lists">Списки</a></li>
+                    <li><a href="#tables">Таблицы</a></li>
+                    <li><a href="#forms">Формы</a></li>
+                </ul>
+            </div>
+
+            <section id="intro" class="html-section">
+                <h2 class="section-title-page html-color">Что такое HTML?</h2>
+                <div class="theory-block" style="margin: 0;">
+                    <p style="color: #553D67; line-height: 25px; font-size: 17px;">HTML (HyperText Markup Language) — это не язык программирования, а язык разметки. Он состоит из тегов, которые говорят браузеру, как отображать контент. Каждый тег имеет своё значение и может содержать атрибуты.</p>
+                    
+                    <div class="note">
+                        <strong style="color: #F64C72;">Важно:</strong> HTML отвечает только за структуру и смысловое значение контента. За красоту отвечает CSS, а за интерактивность — JavaScript.
+                    </div>
+                </div>
+            </section>
+
+            <section id="structure" class="html-section">
+                <h2 class="section-title-page html-color">Базовая структура HTML документа</h2>
+                
+                <div class="tag-card" style="margin-bottom: 20px;">
+                    <p style="color: #553D67; margin-bottom: 15px;">Каждый HTML документ должен иметь определённую структуру. Вот минимальный набор:</p>
+                    
+                    <div class="code-block">
+                        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Название страницы&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Мой сайт&lt;/h1&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;p&gt;Привет, мир!&lt;/p&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;© 2026&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                    
+                    <div class="tag-grid" style="margin-top: 20px;">
+                        <div>
+                            <span class="tag-badge">&lt;!DOCTYPE html&gt;</span>
+                            <p class="tag-desc">Объявляет тип документа и версию HTML (HTML5)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;html&gt;</span>
+                            <p class="tag-desc">Корневой элемент страницы</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;head&gt;</span>
+                            <p class="tag-desc">Служебная информация: meta-теги, заголовок, подключение стилей</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;body&gt;</span>
+                            <p class="tag-desc">Видимая часть страницы</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="basic-tags" class="html-section">
+                <h2 class="section-title-page html-color">Основные теги</h2>
+                
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;h1&gt; - &lt;h6&gt;</div>
+                        <p class="tag-desc">Заголовки разных уровней. h1 — самый важный, используется один раз на странице. h6 — самый маленький.</p>
+                        <div class="tag-example-small">
+                            &lt;h1&gt;Главный заголовок&lt;/h1&gt;<br>
+                            &lt;h2&gt;Подзаголовок&lt;/h2&gt;<br>
+                            &lt;h3&gt;Заголовок третьего уровня&lt;/h3&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;p&gt;</div>
+                        <p class="tag-desc">Абзац текста. Автоматически добавляет отступы сверху и снизу.</p>
+                        <div class="tag-example-small">
+                            &lt;p&gt;Это пример абзаца с текстом. Здесь может быть много строк.&lt;/p&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;a&gt;</div>
+                        <p class="tag-desc">Ссылка. Обязательный атрибут href указывает адрес перехода.</p>
+                        <div class="tag-example-small">
+                            &lt;a href="https://example.com"&gt;Перейти на сайт&lt;/a&gt;<br>
+                            &lt;a href="#section"&gt;Якорь внутри страницы&lt;/a&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;img&gt;</div>
+                        <p class="tag-desc">Изображение. Одиночный тег (самозакрывающийся). Обязательные атрибуты src и alt.</p>
+                        <div class="tag-example-small">
+                            &lt;img src="images/cat.jpg" alt="Рыжий котик" width="300"&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;div&gt;</div>
+                        <p class="tag-desc">Универсальный блочный контейнер. Используется для группировки элементов.</p>
+                        <div class="tag-example-small">
+                            &lt;div class="container"&gt;<br>
+                            &nbsp;&nbsp;&lt;h2&gt;Заголовок&lt;/h2&gt;<br>
+                            &nbsp;&nbsp;&lt;p&gt;Текст&lt;/p&gt;<br>
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;span&gt;</div>
+                        <p class="tag-desc">Строчный контейнер. Для выделения части текста.</p>
+                        <div class="tag-example-small">
+                            &lt;p&gt;Текст со &lt;span class="highlight"&gt;выделенным&lt;/span&gt; словом.&lt;/p&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;br&gt;</div>
+                        <p class="tag-desc">Перенос строки. Одиночный тег.</p>
+                        <div class="tag-example-small">
+                            Первая строка&lt;br&gt;<br>
+                            Вторая строка
+                        </div>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;strong&gt; и &lt;em&gt;</div>
+                        <p class="tag-desc">strong — жирное выделение, em — курсив (логическое ударение).</p>
+                        <div class="tag-example-small">
+                            &lt;strong&gt;Важный текст&lt;/strong&gt;<br>
+                            &lt;em&gt;Акцентированный текст&lt;/em&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="semantic" class="html-section">
+                <h2 class="section-title-page html-color">Семантические теги HTML5</h2>
+                
+                <p style="color: #553D67; margin-bottom: 20px;">Семантические теги не только создают структуру, но и объясняют браузеру и разработчикам смысл содержимого.</p>
+                
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;header&gt;</div>
+                        <p class="tag-desc">Шапка сайта или раздела. Обычно содержит логотип, навигацию, заголовок.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;nav&gt;</div>
+                        <p class="tag-desc">Навигационное меню. Содержит ссылки по сайту.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;main&gt;</div>
+                        <p class="tag-desc">Основное уникальное содержимое страницы. Должен быть один на странице.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;article&gt;</div>
+                        <p class="tag-desc">Независимая статья или пост. Может существовать отдельно.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;section&gt;</div>
+                        <p class="tag-desc">Смысловой раздел. Группирует связанный контент.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;aside&gt;</div>
+                        <p class="tag-desc">Боковая панель. Содержание, связанное с основным контентом.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;footer&gt;</div>
+                        <p class="tag-desc">Подвал сайта. Контакты, копирайт, дополнительные ссылки.</p>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;figure&gt; и &lt;figcaption&gt;</div>
+                        <p class="tag-desc">Для иллюстраций с подписями.</p>
+                    </div>
+                </div>
+                
+                <div class="code-block" style="margin-top: 30px;">
+                    <pre>&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Заголовок статьи&lt;/h2&gt;
+        &lt;p&gt;Опубликовано: 11 марта 2026&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;p&gt;Текст статьи...&lt;/p&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="image.jpg" alt="Иллюстрация"&gt;
+        &lt;figcaption&gt;Подпись к картинке&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Автор: Анна&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</pre>
+                </div>
+            </section>
+
+            <section id="attributes" class="html-section">
+                <h2 class="section-title-page html-color">Атрибуты тегов</h2>
+                
+                <div class="tag-card">
+                    <p style="color: #553D67; margin-bottom: 15px;">Атрибуты добавляют тегам дополнительные свойства. Пишутся в открывающем теге: <code style="background: #e9e8f2; padding: 2px 5px;">&lt;тег атрибут = "значение"&gt;</code></p>
+                    
+                    <div class="tag-grid">
+                        <div>
+                            <span class="tag-badge">id</span>
+                            <p class="tag-desc">Уникальный идентификатор элемента</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">class</span>
+                            <p class="tag-desc">Класс для CSS (можно несколько через пробел)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">style</span>
+                            <p class="tag-desc">Инлайн-стили (не рекомендуется)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">title</span>
+                            <p class="tag-desc">Подсказка при наведении</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">alt</span>
+                            <p class="tag-desc">Описание изображения (для img)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">src</span>
+                            <p class="tag-desc">Путь к файлу (для img, script)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">href</span>
+                            <p class="tag-desc">Адрес ссылки (для a)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">target</span>
+                            <p class="tag-desc">Как открывать ссылку (_blank — в новой вкладке)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lists" class="html-section">
+                <h2 class="section-title-page html-color">Списки</h2>
+                
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;ul&gt; и &lt;li&gt;</div>
+                        <p class="tag-desc">Маркированный список (ненумерованный). Каждый пункт в &lt;li&gt;.</p>
+                        <div class="tag-example-small">
+                            &lt;ul&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Первый пункт&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Второй пункт&lt;/li&gt;<br>
+                            &lt;/ul&gt;
+                        </div>
+                        <p style="margin-top: 10px;">Результат:</p>
+                        <ul style="margin-left: 20px; color: #553D67;">
+                            <li>Первый пункт</li>
+                            <li>Второй пункт</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;ol&gt; и &lt;li&gt;</div>
+                        <p class="tag-desc">Нумерованный список.</p>
+                        <div class="tag-example-small">
+                            &lt;ol&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Шаг первый&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Шаг второй&lt;/li&gt;<br>
+                            &lt;/ol&gt;
+                        </div>
+                        <p style="margin-top: 10px;">Результат:</p>
+                        <ol style="margin-left: 20px; color: #553D67;">
+                            <li>Шаг первый</li>
+                            <li>Шаг второй</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tables" class="html-section">
+                <h2 class="section-title-page html-color">Таблицы</h2>
+                
+                <div class="tag-card">
+                    <p style="margin-bottom: 15px;">Таблицы состоят из строк и ячеек:</p>
+                    <ul style="margin-left: 20px; color: #553D67; line-height: 25px;">
+                        <li><strong>&lt;table&gt;</strong> — контейнер таблицы</li>
+                        <li><strong>&lt;tr&gt;</strong> — строка таблицы</li>
+                        <li><strong>&lt;td&gt;</strong> — ячейка с данными</li>
+                        <li><strong>&lt;th&gt;</strong> — ячейка-заголовок (жирный текст)</li>
+                        <li><strong>&lt;thead&gt;</strong> — шапка таблицы</li>
+                        <li><strong>&lt;tbody&gt;</strong> — тело таблицы</li>
+                    </ul>
+                    
+                    <div class="code-block" style="margin-top: 20px;">
+                        <pre>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Имя&lt;/th&gt;
+            &lt;th&gt;Возраст&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Анна&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Иван&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="forms" class="html-section">
+                <h2 class="section-title-page html-color">Формы</h2>
+                
+                <div class="tag-card">
+                    <p style="margin-bottom: 15px;">Формы нужны для отправки данных на сервер:</p>
+                    
+                    <div class="tag-grid">
+                        <div>
+                            <span class="tag-badge">&lt;form&gt;</span>
+                            <p class="tag-desc">Контейнер формы</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;input&gt;</span>
+                            <p class="tag-desc">Поле ввода (текст, пароль, email)</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;textarea&gt;</span>
+                            <p class="tag-desc">Многострочное поле</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;select&gt; и &lt;option&gt;</span>
+                            <p class="tag-desc">Выпадающий список</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;button&gt;</span>
+                            <p class="tag-desc">Кнопка</p>
+                        </div>
+                        <div>
+                            <span class="tag-badge">&lt;label&gt;</span>
+                            <p class="tag-desc">Подпись к полю</p>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block" style="margin-top: 20px;">
+                        <pre>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="name"&gt;Имя:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;label for="message"&gt;Сообщение:&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="4"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;</pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="theory-block" style="margin-bottom: 50px;">
+                <h3 style="color: #553D67; margin-bottom: 15px;">🔗 Полезные ресурсы</h3>
+                <ul style="color: #553D67; line-height: 2;">
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML" style="color: #2F2FA2;">MDN Web Docs — документация HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element" style="color: #2F2FA2;">HTML5 Справочник тегов</a></li>
+                    <li><a href="https://validator.w3.org/" style="color: #2F2FA2;">Валидатор W3C (проверка кода)</a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="fe">FRONT_END</h4>
+                    <p class="opicanie">Обучение современной фронтенд разработке с нуля</p>
+                    <p class="opicanie2">до профессионального уровня.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://vk.com/anykkln" target="_blank">Вконтакте</a></li>
+                        <li><a href="https://t.me/anykkln" target="_blank">Телеграм</a></li>
+                        <li><a href="mailto:the.kilina@yandex.ru">Написать мне: the.kilina@yandex.ru</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Курсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="html.html">HTML для начинающих</a></li>
+                        <li><a href="css.html">CSS и стилизация</a></li>
+                        <li><a href="js.html">JavaScript основы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.mozilla.org/ru/" target="_blank">Документация</a></li>
+                        <li><a href="https://htmlacademy.ru/blog" target="_blank">Шпаргалки</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">Инструменты</a></li>
+                        <li><a href="https://github.com/theKilina" target="_blank">Гитхаб</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FRONT_END</p>
+                <p>Сайт создан для обучения веб-разработке.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

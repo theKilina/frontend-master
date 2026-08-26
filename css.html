@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Master | Изучение CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="headr">
+            <div class="logo">
+                <p class="logo2">FRONT_END</p>
+            </div>
+            <nav class="head">
+                <ul class="navig">
+                    <li><a href="index.html" class="link">главная</a></li>
+                    <li><a href="html.html" class="link">html</a></li>
+                    <li><a href="css.html" class="link_active">css</a></li>
+                    <li><a href="js.html" class="link">javascript</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header-css">
+                <h1>CSS — стили для веб-страниц</h1>
+                <p>Cascading Style Sheets — это язык, который делает сайты красивыми. Цвета, размеры, анимация, расположение элементов — всё это CSS.</p>
+            </div>
+
+            <div style="margin: 30px 180px; text-align: center;">
+                <div class="demo-box"></div>
+                <p style="color: #553D67; margin-top: 10px;">Наведи мышку на квадрат — увидишь магию CSS!</p>
+            </div>
+
+            <div class="table-of-contents">
+                <h3 style="color: #553D67; font-size: 17px;">Содержание</h3>
+                <ul>
+                    <li><a href="#intro">Введение</a></li>
+                    <li><a href="#connect">Подключение CSS</a></li>
+                    <li><a href="#selectors">Селекторы</a></li>
+                    <li><a href="#colors">Цвета</a></li>
+                    <li><a href="#text">Текст и шрифты</a></li>
+                    <li><a href="#box">Блочная модель</a></li>
+                    <li><a href="#flex">Flexbox</a></li>
+                    <li><a href="#position">Позиционирование</a></li>
+                    <li><a href="#animation">Анимация</a></li>
+                </ul>
+            </div>
+
+            <section id="intro" class="css-section">
+                <h2 class="section-title-page css-color">Что такое CSS?</h2>
+                <div class="theory-block-css" style="margin: 0;">
+                    <p style="color: #553D67; line-height: 25px; font-size: 17px;">CSS (Cascading Style Sheets) — это каскадные таблицы стилей. Если HTML — это скелет страницы, то CSS — её одежда и макияж. С помощью CSS мы задаём цвета, размеры, отступы, шрифты и расположение элементов.</p>
+                    
+                    <div class="note">
+                        <strong style="color: #99738E;">Важно:</strong> CSS работает по принципу каскада — стили применяются сверху вниз, и более поздние могут переопределять ранние.
+                    </div>
+                </div>
+            </section>
+
+            <section id="connect" class="css-section">
+                <h2 class="section-title-page css-color">Способы подключения CSS</h2>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">Внешний файл</div>
+                        <p class="property-desc">Самый правильный способ. CSS хранится в отдельном файле с расширением .css</p>
+                        <div class="code-block" style="margin: 15px 0 0 0; padding: 15px;">
+                            &lt;link rel="stylesheet" href="style.css"&gt;
+                        </div>
+                        <p class="property-desc" style="margin-top: 10px;">Подключается в &lt;head&gt; HTML документа</p>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">Внутренний стиль</div>
+                        <p class="property-desc">CSS пишется внутри тега &lt;style&gt; в самом HTML</p>
+                        <div class="code-block" style="margin: 15px 0 0 0; padding: 15px;">
+                            &lt;style&gt;<br>
+                            &nbsp;&nbsp;body { background: #f0f0f0; }<br>
+                            &lt;/style&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">Инлайн-стили</div>
+                        <p class="property-desc">CSS прямо в атрибуте style тега (использовать только в крайних случаях)</p>
+                        <div class="code-block" style="margin: 15px 0 0 0; padding: 15px;">
+                            &lt;p style="color: red; font-size: 20px;"&gt;<br>
+                            &nbsp;&nbsp;Текст<br>
+                            &lt;/p&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="selectors" class="css-section">
+                <h2 class="section-title-page css-color">Селекторы CSS</h2>
+                
+                <p style="color: #553D67; margin-bottom: 20px;">Селекторы указывают, к каким элементам применять стили.</p>
+                
+                <div class="selector-example">
+                    <span class="tag-badge-css">По тегу</span>
+                    <p class="property-desc">Выбирает все элементы с указанным тегом</p>
+                    <div class="code-block" style="margin: 10px 0 0 0;">
+                        p {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: #553D67;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 16px;<br>
+                        }
+                    </div>
+                    <p class="property-desc">Применится ко всем абзацам &lt;p&gt;</p>
+                </div>
+                
+                <div class="selector-example">
+                    <span class="tag-badge-css">По классу</span>
+                    <p class="property-desc">Выбирает элементы с определённым классом (самый частый способ)</p>
+                    <div class="code-block" style="margin: 10px 0 0 0;">
+                        .feature-card {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #F64C72;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 15px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;padding: 20px;<br>
+                        }
+                    </div>
+                    <p class="property-desc">В HTML: &lt;div class="feature-card"&gt;</p>
+                </div>
+                
+                <div class="selector-example">
+                    <span class="tag-badge-css">По id</span>
+                    <p class="property-desc">Выбирает элемент с уникальным идентификатором</p>
+                    <div class="code-block" style="margin: 10px 0 0 0;">
+                        #header {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;background: #2F2FA2;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+                        }
+                    </div>
+                    <p class="property-desc">В HTML: &lt;header id="header"&gt;</p>
+                </div>
+                
+                <div class="selector-example">
+                    <span class="tag-badge-css">Сложные селекторы</span>
+                    <div class="code-block" style="margin: 10px 0 0 0;">
+                        /* Вложенные элементы */<br>
+                        .features-grid .feature-card { }<br><br>
+                        
+                        /* Дочерние элементы (только прямые потомки) */<br>
+                        .footer > p { }<br><br>
+                        
+                        /* Элемент с двумя классами */<br>
+                        .btn-primary.active { }<br><br>
+                        
+                        /* Несколько элементов */<br>
+                        h1, h2, h3 { }<br><br>
+                        
+                        /* Псевдоклассы */<br>
+                        .btn-primary:hover { }<br>
+                        .feature-card:first-child { }<br>
+                        a:visited { }
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <p><strong style="color: #99738E;">Приоритет селекторов:</strong> #id (100) > .class (10) > тег (1). Чем выше приоритет, тем важнее правило.</p>
+                </div>
+            </section>
+
+            <section id="colors" class="css-section">
+                <h2 class="section-title-page css-color">Цвета в CSS</h2>
+                
+                <div class="property-card">
+                    <p style="color: #553D67; margin-bottom: 15px;">В этом проекте используется моя цветовая палитра:</p>
+                    
+                    <div class="color-palette">
+                        <div class="color color1" title="#F64C72 - ярко-розовый"></div>
+                        <div class="color color2" title="#99738E - приглушенный розовый"></div>
+                        <div class="color color3" title="#2F2FA2 - синий"></div>
+                        <div class="color color4" title="#553D67 - темно-фиолетовый"></div>
+                        <div class="color color5" title="#553d67b7 - полупрозрачный"></div>
+                    </div>
+                    
+                    <div class="code-block">
+                        /* HEX-формат */<br>
+                        color: #F64C72;<br>
+                        background: #99738E;<br><br>
+                        
+                        /* RGB-формат */<br>
+                        color: rgb(47, 47, 162);<br>
+                        background: rgba(85, 61, 103, 0.7); /* a - прозрачность */<br><br>
+                        
+                        /* Названия цветов (ограничено) */<br>
+                        color: white;<br>
+                        background: black;
+                    </div>
+                </div>
+            </section>
+
+            <section id="text" class="css-section">
+                <h2 class="section-title-page css-color">Текст и шрифты</h2>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">font-size</div>
+                        <p class="property-desc">Размер шрифта. Можно в px, em, rem, %</p>
+                        <div class="code-block" style="padding: 10px;">
+                            font-size: 16px;<br>
+                            font-size: 1.2rem;<br>
+                            font-size: 120%;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">font-weight</div>
+                        <p class="property-desc">Жирность шрифта</p>
+                        <div class="code-block" style="padding: 10px;">
+                            font-weight: normal; /* 400 */<br>
+                            font-weight: bold; /* 700 */<br>
+                            font-weight: 300; /* тонкий */<br>
+                            font-weight: 900; /* очень жирный */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">text-align</div>
+                        <p class="property-desc">Выравнивание текста</p>
+                        <div class="code-block" style="padding: 10px;">
+                            text-align: left;<br>
+                            text-align: center;<br>
+                            text-align: right;<br>
+                            text-align: justify;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">line-height</div>
+                        <p class="property-desc">Межстрочный интервал</p>
+                        <div class="code-block" style="padding: 10px;">
+                            line-height: 1.5; /* относительно размера шрифта */<br>
+                            line-height: 20px;<br>
+                            line-height: 150%;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">font-family</div>
+                        <p class="property-desc">Шрифт (с запасными вариантами)</p>
+                        <div class="code-block" style="padding: 10px;">
+                            font-family: 'MyFont', Arial, sans-serif;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">text-decoration</div>
+                        <p class="property-desc">Оформление текста</p>
+                        <div class="code-block" style="padding: 10px;">
+                            text-decoration: none;<br>
+                            text-decoration: underline;<br>
+                            text-decoration: line-through;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-block-css" style="margin: 20px 0;">
+                    <h3 style="color: #553D67; margin-bottom: 10px;">Пример из моего сайта:</h3>
+                    <div class="code-block">
+                        .hero-title {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 40px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 700;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: #553D67;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section id="box" class="css-section">
+                <h2 class="section-title-page css-color">Блочная модель (Box Model)</h2>
+                
+                <p style="color: #553D67; margin-bottom: 20px;">Каждый элемент в CSS — это прямоугольник, который состоит из:</p>
+                
+                <div style="display: flex; justify-content: center; margin: 30px 0;">
+                    <div style="background: #2F2FA2; padding: 30px; border-radius: 10px;">
+                        <div style="background: #99738E; padding: 25px; border-radius: 8px;">
+                            <div style="background: #F64C72; padding: 20px; border-radius: 5px;">
+                                <div style="background: #553D67; width: 100px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; border-radius: 3px;">
+                                    Контент
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <p style="color: #F64C72;">Внешний отступ (margin)</p>
+                    <p style="color: #99738E;">Граница (border)</p>
+                    <p style="color: #2F2FA2;">Внутренний отступ (padding)</p>
+                    <p style="color: #553D67;">Контент</p>
+                </div>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">margin</div>
+                        <p class="property-desc">Внешний отступ — расстояние от элемента до соседей</p>
+                        <div class="code-block" style="padding: 10px;">
+                            margin: 20px; /* со всех сторон */<br>
+                            margin: 10px 20px; /* верх/низ, право/лево */<br>
+                            margin-top: 10px;<br>
+                            margin: 0 auto; /* центрирование */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">padding</div>
+                        <p class="property-desc">Внутренний отступ — расстояние от границы до контента</p>
+                        <div class="code-block" style="padding: 10px;">
+                            padding: 20px;<br>
+                            padding: 10px 15px;<br>
+                            padding-left: 25px;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">border</div>
+                        <p class="property-desc">Граница элемента</p>
+                        <div class="code-block" style="padding: 10px;">
+                            border: 1px solid #F64C72;<br>
+                            border-radius: 10px; /* скругление */<br>
+                            border-bottom: 2px dashed #2F2FA2;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">width / height</div>
+                        <p class="property-desc">Ширина и высота</p>
+                        <div class="code-block" style="padding: 10px;">
+                            width: 300px;<br>
+                            height: 200px;<br>
+                            width: 50%; /* от родителя */<br>
+                            max-width: 1200px;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <p><strong style="color: #99738E;">Совет:</strong> Используй `box-sizing: border-box;`, чтобы padding и border не увеличивали общую ширину элемента.</p>
+                    <div class="code-block" style="margin-top: 10px;">
+                        * {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section id="flex" class="css-section">
+                <h2 class="section-title-page css-color">Flexbox — гибкое расположение</h2>
+                
+                <p style="color: #553D67; margin-bottom: 20px;">Flexbox помогает располагать элементы в ряд или колонку и управлять их выравниванием.</p>
+                
+                <div class="property-card">
+                    <div class="property-name">display: flex;</div>
+                    <p class="property-desc">Включает flex-контейнер</p>
+                    
+                    <div class="flex-demo">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                    </div>
+                    
+                    <div class="code-block" style="margin-top: 20px;">
+                        .container {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px; /* расстояние между элементами */<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">justify-content</div>
+                        <p class="property-desc">Выравнивание по главной оси (горизонтально)</p>
+                        <div class="code-block" style="padding: 10px;">
+                            justify-content: flex-start; /* слева */<br>
+                            justify-content: center; /* по центру */<br>
+                            justify-content: space-between; /* между */<br>
+                            justify-content: space-around; /* вокруг */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">align-items</div>
+                        <p class="property-desc">Выравнивание по поперечной оси (вертикально)</p>
+                        <div class="code-block" style="padding: 10px;">
+                            align-items: stretch; /* растянуть */<br>
+                            align-items: center; /* по центру */<br>
+                            align-items: flex-start; /* сверху */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">flex-direction</div>
+                        <p class="property-desc">Направление элементов</p>
+                        <div class="code-block" style="padding: 10px;">
+                            flex-direction: row; /* в ряд */<br>
+                            flex-direction: column; /* в колонку */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">flex</div>
+                        <p class="property-desc">Как элемент будет расти/сжиматься</p>
+                        <div class="code-block" style="padding: 10px;">
+                            flex: 1; /* занимает всё свободное место */<br>
+                            flex: 0 0 200px; /* фиксированная ширина */
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-block-css" style="margin: 20px 0;">
+                    <h3 style="color: #553D67; margin-bottom: 10px;">Пример из моего сайта (навигация):</h3>
+                    <div class="code-block">
+                        .headr {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section id="position" class="css-section">
+                <h2 class="section-title-page css-color">Позиционирование</h2>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">position: static</div>
+                        <p class="property-desc">Обычное положение по умолчанию</p>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">position: relative</div>
+                        <p class="property-desc">Относительное положение. Можно смещать относительно себя</p>
+                        <div class="code-block" style="padding: 10px;">
+                            position: relative;<br>
+                            top: 10px;<br>
+                            left: 20px;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">position: absolute</div>
+                        <p class="property-desc">Абсолютное положение. Элемент выпадает из потока и позиционируется относительно ближайшего relative-родителя</p>
+                        <div class="code-block" style="padding: 10px;">
+                            position: absolute;<br>
+                            top: 0;<br>
+                            right: 0;
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">position: fixed</div>
+                        <p class="property-desc">Фиксированное относительно окна браузера. Остаётся на месте при прокрутке</p>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">position: sticky</div>
+                        <p class="property-desc">Прилипает при прокрутке (как моя шапка)</p>
+                        <div class="code-block" style="padding: 10px;">
+                            position: sticky;<br>
+                            top: 0;<br>
+                            z-index: 1000;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <p><strong style="color: #99738E;">Из моего сайта:</strong> Шапка с классом .headr имеет <code>position: sticky;</code> и прилипает к верху страницы.</p>
+                </div>
+            </section>
+
+            <section id="animation" class="css-section">
+                <h2 class="section-title-page css-color">Анимация и трансформации</h2>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">transition</div>
+                        <p class="property-desc">Плавный переход при изменении свойств</p>
+                        <div class="code-block" style="padding: 10px;">
+                            transition: all 0.3s ease;<br>
+                            transition: transform 0.5s;<br>
+                            transition: background 0.2s linear;
+                        </div>
+                        <div style="width: 50px; height: 50px; background: #F64C72; margin-top: 15px; transition: all 0.5s; border-radius: 5px;" 
+                             onmouseover="this.style.transform='scale(1.5)'; this.style.background='#2F2FA2'; this.style.borderRadius='50%'"
+                             onmouseout="this.style.transform='scale(1)'; this.style.background='#F64C72'; this.style.borderRadius='5px'">
+                        </div>
+                        <p style="color: #553D67; font-size: 12px; margin-top: 5px;">Наведи на квадрат</p>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">transform</div>
+                        <p class="property-desc">Трансформация элемента</p>
+                        <div class="code-block" style="padding: 10px;">
+                            transform: scale(1.1); /* увеличение */<br>
+                            transform: rotate(45deg); /* поворот */<br>
+                            transform: translateX(20px); /* сдвиг */
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-name">@keyframes</div>
+                        <p class="property-desc">Сложная анимация</p>
+                        <div class="code-block" style="padding: 10px;">
+                            @keyframes bounce {<br>
+                            &nbsp;&nbsp;0% { transform: translateY(0); }<br>
+                            &nbsp;&nbsp;50% { transform: translateY(-20px); }<br>
+                            &nbsp;&nbsp;100% { transform: translateY(0); }<br>
+                            }<br><br>
+                            
+                            .element {<br>
+                            &nbsp;&nbsp;animation: bounce 2s infinite;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-block-css" style="margin: 20px 0;">
+                    <h3 style="color: #553D67; margin-bottom: 10px;">Пример из моего сайта (кнопки):</h3>
+                    <div class="code-block">
+                        .btn-primary {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;transition: transform 0.3s ease;<br>
+                        }<br><br>
+                        
+                        .btn-primary:hover {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;transform: scale(1.05);<br>
+                        }<br><br>
+                        
+                        .btn-primary:active {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;transform: scale(0.95);<br>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section class="css-section">
+                <h2 class="section-title-page css-color">Адаптивный дизайн</h2>
+                
+                <div class="property-card">
+                    <p class="property-desc">Медиа-запросы позволяют менять стили в зависимости от размера экрана:</p>
+                    
+                    <div class="code-block" style="margin-top: 15px;">
+                        /* Для планшетов */<br>
+                        @media (max-width: 768px) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.container {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0 20px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }<br><br>
+                        
+                        /* Для телефонов */<br>
+                        @media (max-width: 480px) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.features-grid {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <div class="theory-block-css" style="margin: 50px 180px;">
+                <h3 style="color: #553D67; margin-bottom: 15px;">🔗 Полезные ресурсы по CSS</h3>
+                <ul style="color: #553D67; line-height: 2;">
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS" style="color: #2F2FA2;">MDN Web Docs — документация CSS</a></li>
+                    <li><a href="https://css-tricks.com/" style="color: #2F2FA2;">CSS Tricks — полезные приёмы</a></li>
+                    <li><a href="https://flexboxfroggy.com/" style="color: #2F2FA2;">Flexbox Froggy — игра для изучения Flexbox</a></li>
+                    <li><a href="https://cssgridgarden.com/" style="color: #2F2FA2;">CSS Grid Garden — игра для изучения Grid</a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="fe">FRONT_END</h4>
+                    <p class="opicanie">Обучение современной фронтенд разработке с нуля</p>
+                    <p class="opicanie2">до профессионального уровня.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://vk.com/anykkln" target="_blank">Вконтакте</a></li>
+                        <li><a href="https://t.me/anykkln" target="_blank">Телеграм</a></li>
+                        <li><a href="mailto:the.kilina@yandex.ru">Написать мне: the.kilina@yandex.ru</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Курсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="html.html">HTML для начинающих</a></li>
+                        <li><a href="css.html">CSS и стилизация</a></li>
+                        <li><a href="js.html">JavaScript основы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.mozilla.org/ru/" target="_blank">Документация</a></li>
+                        <li><a href="https://htmlacademy.ru/blog" target="_blank">Шпаргалки</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">Инструменты</a></li>
+                        <li><a href="https://github.com/theKilina" target="_blank">Гитхаб</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FRONT_END</p>
+                <p>Сайт создан для обучения веб-разработке.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
