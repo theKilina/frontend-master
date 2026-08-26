@@ -5,6 +5,8 @@
 
 Сайт содержит теорию, примеры кода и интерактивные демонстрации.
 
+Сайт: [list-to-do-task.netlify.app](https://fronend-master.netlify.app)
+
 ---
 
 ## Что внутри?
