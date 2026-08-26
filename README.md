@@ -1,39 +1,80 @@
-Frontend Master - Сайт для обучения основам фронтенд-разработки: HTML, CSS, JavaScript.
+# Frontend Master — обучение веб-разработке
 
-• Страницы
+Привет! Это мой личный проект — сайт для обучения основам фронтенд-разработки.  
+Я создала его, чтобы помочь новичкам освоить HTML, CSS и JavaScript.
 
-Главная — обзор курса
-HTML — теги, атрибуты, формы
-CSS — стили, Flexbox, анимации
-JavaScript — переменные, условия, циклы, функции
+Сайт содержит теорию, примеры кода и интерактивные демонстрации.
 
-• Технологии
+---
 
-HTML5, CSS3, JavaScript (ES6+)
+## Что внутри?
 
-• Структура
+| Страница | Описание |
+|----------|----------|
+| **Главная** | Обзор курса, мотивация начать учиться |
+| **HTML** | Всё о структуре веб-страниц, теги, атрибуты, формы |
+| **CSS** | Стилизация, цвета, шрифты, Flexbox, анимации |
+| **JavaScript** | Переменные, условия, циклы, массивы, объекты, функции |
 
+---
+
+## Технологии
+
+- **HTML5** — семантическая вёрстка
+- **CSS3** — Flexbox, анимации, адаптивный дизайн
+- **JavaScript (ES6+)** — DOM-манипуляции, интерактивность
+- **Кастомные шрифты** — подключены локально
+
+---
+
+## Структура проекта
 frontend-master/
-├── index.html
-├── html.html
-├── css.html
-├── js.html
+│
+├── index.html # Главная страница
+├── html.html # Уроки HTML
+├── css.html # Уроки CSS
+├── js.html # Уроки JavaScript
+│
 ├── css/
-│   └── style.css
+│ └── style.css # Все стили в одном файле
+│
 ├── js/
-│   └── script.js
-├── Bounded/  # шрифты
-└── README.md
+│ └── script.js # Основные скрипты
+│
+├── Bounded/ # Кастомные шрифты
+│ ├── Bounded-ExtraLight.ttf
+│ ├── Bounded-Regular.ttf
+│ ├── Bounded-Black.ttf
+│ └── Bounded-Variable.ttf
+│
+├── favicon.ico # Иконка сайта
+└── README.md # Описание проекта
 
-• Как запустить
+---
 
-Открой index.html в браузере.
+## Как использовать
 
-• Контакты
+1. **Скачай или клонируй репозиторий:**
+   ```bash
+   git clone https://github.com/theKilina/frontend-master.git
+Открой index.html в любом браузере
+Листай и учись! 
 
-VK: vk.com/anykkln
-TG: t.me/anykkln
+## Полезные ссылки
+
+Ресурс	Ссылка
+MDN Web Docs	developer.mozilla.org/ru/
+Современный учебник JS	learn.javascript.ru
+HTML Academy	htmlacademy.ru
+CodeWars	codewars.com
+Flexbox Froggy	flexboxfroggy.com
+CSS Grid Garden	cssgridgarden.com
+
+## Связаться со мной
+
+ВКонтакте: vk.com/anykkln
+Telegram: t.me/anykkln
 Email: the.kilina@yandex.ru
 GitHub: github.com/theKilina
 
-⭐ Поставь звезду, если проект полезен!
+⭐ Если тебе понравился проект — поставь звёздочку на GitHub!
